@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Assorted thoughts</title>
+    <title>Assorted Thoughts</title>
   </head>
   <body>
     <div>
@@ -8,12 +8,12 @@
       <h2>Various coding projects and blog posts</h2>
     </div>
 
+{% for post in posts %}
     <div>
-      {{ posts }}
+      <p>Published: {{ post.published_date }}</p>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
-    <div>
-      {{ posts }}
-    </div>
+{% endfor %}
   </body>
 </html>
