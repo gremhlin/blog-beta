@@ -14,9 +14,9 @@
   margin-left: 40px;
 }
 
-h1, h2, h3, h4{
+.jumbotron h1{
   font-family: 'Lobster', cursive;
-}
+} /*TODO: FIX FONT */
 
 .date{
   color:#586F7C;
@@ -44,19 +44,12 @@ h1, h2, h3, h4{
 
 .post h2 a, .post h2 a:visited{
   color: #000000;
+  text-decoration: none;
 }
 
 .preview{
-  background: linear-gradient(rgba(255,255,255,1) 20%, transparent 80%)
-  -webkit-background-clip; text;
+  background: linear-gradient(rgba(255,255,255,1) 20%, transparent 80%);
+  -webkit-background-clip: text;
   -webkit-fill-text-color: transparent;
   text-align: justify;
-}
-
-.read-more{
-  background-color: #2F4550;
-  color: #ffffff;
-  text-align: center;
-  font-family: "helvetica";
-
 }
