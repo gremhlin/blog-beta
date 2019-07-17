@@ -1,5 +1,3 @@
-<!-- This is the base file! -->
-<!-- Changes will be site-wide! -->
 {% load static %}
 <html lang="en">
   <head>
@@ -10,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/material/24/000000/globe-earth.png"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/globe.png' %}"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,6 +28,7 @@
     </div>
     {% endif %}
     <!--End of jumbotron-->
+
     <!--Navbar-->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top"> <!--TODO: Decide if it will remain sticky-->
       <a class="navbar-brand" href="/">Assorted Thoughts</a>
@@ -39,13 +38,13 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!--TODO: Fix links-->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#">Archive</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">Portfolio</a>
+              <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
@@ -57,44 +56,10 @@
     </nav>
     <!--End of header/navbar-->
 
+    <!--Post list and sidebar-->
+    {% block content%}
+    {% endblock %}
 
-    <div class="container" style="margin-top: 30px">
-
-      <div class="row">
-        <!--Post list-->
-        <div class="col-sm-8">
-          {% block content %}
-          {% endblock %}
-        </div>
-        <!--End of post list-->
-
-        <!--Sidebar-->
-        <div class="col-sm-4">
-          <h2>About Me</h2>
-          <div class="aboutimg">Fake pp</div>
-          <p>Some text about me</p>
-
-          <h3>Some links</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-          <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link diabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <hr class="d-sm-none">
-        </div>
-        <!--End of sidebar-->
-
-      </div>
     </div>
   </body>
 </html>
