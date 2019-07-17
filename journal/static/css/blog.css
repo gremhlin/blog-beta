@@ -14,9 +14,9 @@
   margin-left: 40px;
 }
 
-h1, h2, h3, h4{
+.jumbotron h1{
   font-family: 'Lobster', cursive;
-}
+} /*TODO: FIX FONT */
 
 .date{
   color:#586F7C;
@@ -47,8 +47,8 @@ h1, h2, h3, h4{
 }
 
 .preview{
-  background: linear-gradient(rgba(255,255,255,1) 20%, transparent 80%)
-  -webkit-background-clip; text;
+  background: linear-gradient(rgba(255,255,255,1) 20%, transparent 80%);
+  -webkit-background-clip: text;
   -webkit-fill-text-color: transparent;
   text-align: justify;
 }
@@ -59,4 +59,9 @@ h1, h2, h3, h4{
   text-align: center;
   font-family: "helvetica";
 
+}
+
+.aboutimg {
+  height: 200px;
+  background: #aaa;
 }
