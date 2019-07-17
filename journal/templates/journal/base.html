@@ -11,18 +11,11 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'images/globe.png' %}"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-      .aboutimg {
-        height: 200px;
-        background: #aaa;
-      } 
-    </style> <!--Fix image-->
   </head>
   
   <body>
     <!--Header/jumbotron-->
-    {% if request.path == "/" %}
+    {% if request.path == "/" %} <!--Only display jumbotron if user is on the front page-->
     <div class="jumbotron text-center" style="margin-bottom: 0">
       <h1>Assorted Thoughts</h1>
     </div>

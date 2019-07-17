@@ -14,9 +14,9 @@
       <div class="date">
         {{ post.published_date }}
       </div>
-      <a href="{% url 'post_detail' pk=post.pk %}"><div class="read-more">
-        <p>READ MORE</p>
-      </div></a>
+      <a style="text-decoration: none" href="{% url 'post_detail' pk=post.pk %}"><button type="button" class="btn btn-warning btn-block postbtn">
+        Read more
+      </button></a>
     </div>
     {% endfor %}
     </div>
@@ -26,24 +26,10 @@
     <div class="col-sm-4">
       <h2>About Me</h2>
       <img class="img-fluid" src="{% static 'images/biopic.jpg' %}" alt="Portrait of me">
-      <p>Some text about me</p>
-
-      <h3>Some links</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link diabled" href="#">Disabled</a>
-        </li>
-      </ul>
+      <p>My name is Jørgen Borchgrevink and I'm a 22 year old student from Oslo, Norway.
+        I'm currently a finalist at the University of St Andrews, studying International Relations
+        and Economics.
+      </p>
       <hr class="d-sm-none">
     </div>
     <!--End of sidebar-->

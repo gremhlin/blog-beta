@@ -44,6 +44,7 @@
 
 .post h2 a, .post h2 a:visited{
   color: #000000;
+  text-decoration: none;
 }
 
 .preview{
@@ -51,17 +52,4 @@
   -webkit-background-clip: text;
   -webkit-fill-text-color: transparent;
   text-align: justify;
-}
-
-.read-more{
-  background-color: #2F4550;
-  color: #ffffff;
-  text-align: center;
-  font-family: "helvetica";
-
-}
-
-.aboutimg {
-  height: 200px;
-  background: #aaa;
 }
