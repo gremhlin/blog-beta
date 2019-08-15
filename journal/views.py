@@ -9,7 +9,7 @@ def post_list(request):
     return render(request, 'journal/post_list.html', {'posts': posts, 'bio': bio})
 
 def about(request):
-    bio = Bio.objects.get()
+    bio = get_object_or_404(Bio)
     return render(request, 'journal/about.html', {'bio': bio})
 
 def archive(request):
