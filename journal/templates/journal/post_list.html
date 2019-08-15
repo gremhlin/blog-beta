@@ -1,5 +1,5 @@
 {% extends 'journal/base.html' %}
-{% load static%}
+{% load static %}
 
 {% block content %}
   <div class="container" style="margin-top: 30px">
@@ -26,14 +26,14 @@
     <div class="col-sm-4">
       <h2>About Me</h2>
       <img class="img-fluid" src="{% static 'images/biopic.jpg' %}" alt="Portrait of me">
-      <p>My name is Jørgen Borchgrevink and I'm a 22 year old student from Oslo, Norway.
-        I'm currently a finalist at the University of St Andrews, studying International Relations
-        and Economics.
-      </p>
+      <p>{{ bio.biography_blurb }}</p>
       <hr class="d-sm-none">
+      <div class="class list-group list-group-flush">
+         <a href="https://www.linkedin.com/in/jorgen-borchgrevink/" class="list-group-item list-group-item-action">LinkedIn</a>
+         <a href="https://github.com/gremhlin" class="list-group-item list-group-item-action">GitHub</a>
+      </div>
     </div>
     <!--End of sidebar-->
   </div>
 
 {% endblock %}
-

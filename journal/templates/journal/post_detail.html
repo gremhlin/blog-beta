@@ -1,16 +1,22 @@
 {% extends 'journal/base.html' %}
 
 {% block content %}
-  <div class="post">
-    <h2>{{ post.title }}</h2>
-    {% if post.published_date %}
-    <div class="date">
-      {{ post.published_date }}
+  <div class="container">
+    <div class="row-md text-justify">
+      <div class="display-3">{{ post.title }}</div>
+      {% if post.published_date %}
+      <div class="date">
+        {{ post.published_date }}
+      </div>
+      {% endif %}
+      <p>{{ post.text|linebreaksbr }}</p>
+
+
+      <!--Edit button-->
+      {% if user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+      {% endif %}
     </div>
-    {% endif %}
-    <p>{{ post.text|linebreaksbr }}</p>
-    {% if user.is_authenticated %}
-      <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    {% endif %}
   </div>
+
 {% endblock %}

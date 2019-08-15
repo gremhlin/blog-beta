@@ -1,5 +1,18 @@
 {% extends 'journal/base.html' %}
+{% load static %}
 
 {% block content %}
-    <p>ABOUT ME</p>
+    <div class="container">
+      <div class="row">
+        <div class="col sm-8">
+          <h1>About Me</h1>
+          <p>{{ bio.biography }}</p>
+        </div>
+
+        <div class="col sm-4">
+          <img class="img-fluid" src="{% static 'images/biopic.jpg' %}" alt="Portrait of me">
+          <hr class="d-sm-none">
+        </div>
+      </div>
+    </div>
 {% endblock %}

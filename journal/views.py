@@ -1,14 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post
+from .models import Post, Bio
 from .forms import PostForm
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'journal/post_list.html', {'posts': posts})
+    bio = Bio.objects.get()
+    return render(request, 'journal/post_list.html', {'posts': posts, 'bio': bio})
 
 def about(request):
-    return render(request, 'journal/about.html')
+    bio = Bio.objects.get()
+    return render(request, 'journal/about.html', {'bio': bio})
 
 def archive(request):
     return render(request, 'journal/archive.html')

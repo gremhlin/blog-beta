@@ -15,6 +15,7 @@ class Post(models.Model):
         choices=CATEGORY_CHOICES,
         max_length=15,
         blank=True)
+
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
@@ -25,3 +26,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Bio(models.Model):
+    birthday = models.DateField()
+    biography = models.TextField()
+    biography_blurb = models.TextField(blank=True)
+    def age(self):
+        return timezone.now() - self.birthday
