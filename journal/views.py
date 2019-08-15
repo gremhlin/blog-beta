@@ -13,7 +13,8 @@ def about(request):
     return render(request, 'journal/about.html', {'bio': bio})
 
 def archive(request):
-    return render(request, 'journal/archive.html')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'journal/archive.html', {'posts': posts})
 
 def portfolio(request):
     return render(request, 'journal/portfolio.html')

@@ -7,16 +7,14 @@
 
     <!--Post list-->
     <div class="col-sm-8">
-      {% for post in posts %}
+    {% for post in posts %}
     <div class="post">
       <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
       <p class="preview">{{ post.text|truncatechars:600 }}</p>
       <div class="date">
         {{ post.published_date }}
       </div>
-      <a style="text-decoration: none" href="{% url 'post_detail' pk=post.pk %}"><button type="button" class="btn btn-warning btn-block postbtn">
-        Read more
-      </button></a>
+      <a class="btn btn-dark btn-block" href="{% url 'post_detail' pk=post.pk %}" role="button">Read More</a>
     </div>
     {% endfor %}
     </div>
@@ -24,13 +22,17 @@
 
     <!--Sidebar-->
     <div class="col-sm-4">
-      <h2>About Me</h2>
-      <img class="img-fluid" src="{% static 'images/biopic.jpg' %}" alt="Portrait of me">
-      <p>{{ bio.biography_blurb }}</p>
-      <hr class="d-sm-none">
-      <div class="class list-group list-group-flush">
-         <a href="https://www.linkedin.com/in/jorgen-borchgrevink/" class="list-group-item list-group-item-action">LinkedIn</a>
-         <a href="https://github.com/gremhlin" class="list-group-item list-group-item-action">GitHub</a>
+      <div class="card" style="width:400px">
+        <img class="card-img-top" src="{% static 'images/biopic.jpg' %}" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">About me</h4>
+          <p class="card-text">{{ bio.biography_blurb }}</p>
+          <div class="class list-group list-group-flush">
+             <a href="https://www.linkedin.com/in/jorgen-borchgrevink/" class="list-group-item list-group-item-action">LinkedIn</a>
+             <a href="https://github.com/gremhlin" class="list-group-item list-group-item-action">GitHub</a>
+             <a href="{% url 'about' %}" class="list-group-item list-group-item-action">Read More</a>
+          </div>
+        </div>
       </div>
     </div>
     <!--End of sidebar-->

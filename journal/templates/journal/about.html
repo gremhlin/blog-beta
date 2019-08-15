@@ -4,11 +4,20 @@
 {% block content %}
     <div class="container">
       <div class="row">
-        <div class="col sm-8">
-          <h1>About Me</h1>
+        <!-- Bio -->
+        <div class="col sm-8 text-justify">
+          <h2>About Me</h2>
           <p>{{ bio.biography }}</p>
+          <a class="btn btn-outline-dark" href="#" role="button">CV</a>
+
+          <h2>About this blog</h2>
+          <p>I've been learning python for about 8 months and recently decided
+          to get into web development. This blog was built from scratch using
+          Django and Bootstrap 4. If you're curious about some of my other
+          projects, feel free to have a look at my portfolio or my GitHub page.</p>
         </div>
 
+        <!-- Images -->
         <div class="col sm-4">
           <img class="img-fluid" src="{% static 'images/biopic.jpg' %}" alt="Portrait of me">
           <hr class="d-sm-none">
