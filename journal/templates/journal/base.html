@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  
+
   <body>
     <!--Header/jumbotron-->
     {% if request.path == "/" %} <!--Only display jumbotron if user is on the front page-->
@@ -34,7 +34,7 @@
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">Archive</a>
+              <a class="nav-link" href="{% url 'archive' %}">Archive</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>

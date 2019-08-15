@@ -10,6 +10,9 @@ def post_list(request):
 def about(request):
     return render(request, 'journal/about.html')
 
+def archive(request):
+    return render(request, 'journal/archive.html')
+
 def portfolio(request):
     return render(request, 'journal/portfolio.html')
 
